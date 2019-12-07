@@ -10,6 +10,7 @@ chardet==3.0.4
 cryptography==2.1.4
 Cython==0.29.14
 decorator==4.4.1
+django==2.2.2
 defusedxml==0.6.0
 docutils==0.15.2
 entrypoints==0.3
@@ -28,8 +29,6 @@ jupyter-console==6.0.0
 jupyter-core==4.6.1
 keyring==10.6.0
 keyrings.alt==3.0
-Kivy==1.11.1
-Kivy-Garden==0.1.4
 kombu==4.6.6
 MarkupSafe==1.1.1
 mistune==0.8.4
@@ -78,3 +77,4 @@ wcwidth==0.1.7
 webencodings==0.5.1
 widgetsnbextension==3.5.1
 zipp==0.6.0
+suit

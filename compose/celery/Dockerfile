@@ -49,7 +49,6 @@ RUN apt-get install -y \
     libtinfo5 \
     cmake
 
-RUN pip3 install git+https://github.com/kivy/buildozer.git
 
 RUN apt-get install -y \
     libltdl-dev \
