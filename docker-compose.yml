@@ -1,0 +1,33 @@
+version: "3.4"
+
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: compose/celery/Dockerfile
+    container_name: notebook 
+    env_file:
+      - ./envs/db_keys
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+    depends_on:
+      - db
+    command : ["sh", "-c", "python manage.py runserver 0.0.0.0:8000"]
+
+  db:
+    image: postgres
+    container_name: postgres_db
+    env_file:
+      - ./envs/db_keys
+    volumes:
+      - /psql_db/postgres_data:/var/lib/postgresql/data
+      - /psql_db/postgres_data_backups:/backups
+
+  adminer:
+    image: adminer
+    container_name: psql_admin
+    ports:
+      - "8080:8080"
