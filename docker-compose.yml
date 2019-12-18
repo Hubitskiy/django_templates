@@ -2,6 +2,17 @@ version: "3.4"
 
 
 services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+      - ./config/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+
   web:
     build:
       context: .
@@ -9,8 +20,6 @@ services:
     container_name: notebook 
     env_file:
       - ./envs/db_keys
-    ports:
-      - "8000:8000"
     volumes:
       - ./src:/src
     depends_on:

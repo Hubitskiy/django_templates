@@ -1,0 +1,20 @@
+Watching for file changes with StatReloader
+/src/quickstart/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/src/video/views.py", line 5, in hello
+    6 / 0
+ZeroDivisionError: division by zero
+"GET /hello/ HTTP/1.0" 500 27
+/src/video/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /hello/ HTTP/1.0" 200 11
+/src/quickstart/settings.py changed, reloading.
