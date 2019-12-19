@@ -18,3 +18,5 @@ ZeroDivisionError: division by zero
 Watching for file changes with StatReloader
 "GET /hello/ HTTP/1.0" 200 11
 /src/quickstart/settings.py changed, reloading.
+Not Found: /
+Not Found: /favicon.ico
