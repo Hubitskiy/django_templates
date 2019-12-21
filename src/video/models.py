@@ -17,6 +17,10 @@ class MyVideo(models.Model):
     @property
     def player(self):
         return mark_safe(f"<iframe width='100' height='100' src='{self.url}' ></iframe>")
+    
+    @property
+    def comment(self):
+        return self.comment_set.all()
 
 
 class Comment(models.Model):
@@ -25,3 +29,6 @@ class Comment(models.Model):
     likes = models.PositiveIntegerField(default=0)
     video = models.ForeignKey(MyVideo, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.text[:20]

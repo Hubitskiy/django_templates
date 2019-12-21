@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Comment, MyVideo
+from .models import MyVideo
 
 
 def hello(request):
-	return render(request, "index.html")
+	response = {}
+	response['all_video'] = MyVideo.objects.all()
+	return render(request, "index.html", response)
 # Create your views here.
