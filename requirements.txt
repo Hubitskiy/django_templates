@@ -79,3 +79,6 @@ widgetsnbextension==3.5.1
 zipp==0.6.0
 suit
 gunicorn
+django-redis
+loadtest
+djangorestframework

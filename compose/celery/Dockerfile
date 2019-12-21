@@ -27,6 +27,8 @@ RUN apt-get install -y \
 
 RUN echo "y" | apt install python-psycopg2
 RUN echo "y" | apt install libpq-dev python-dev
+RUN echo "y" | apt install npm
+RUN npm install -g loadtest
 
 COPY ./requirements.txt /scripts/
 RUN pip3 install --no-cache-dir -r /scripts/requirements.txt

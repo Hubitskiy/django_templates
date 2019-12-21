@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 from django.contrib.auth.models import User
+from datetime import date
 
 
 class MyVideo(models.Model):
@@ -21,6 +22,20 @@ class MyVideo(models.Model):
     @property
     def comment(self):
         return self.comment_set.all()
+    
+    @property
+    def long_post(self):
+        return date.today() - self.date.date()
+
+    def to_json(self):
+        return {"title":self.title,
+                "slug":self.slug,
+                "description":self.description,
+                "likes":self.likes,
+                "url":self.url,
+                "date":self.date,
+                "comment":self.comment,
+                "long_post":self.long_post}
 
 
 class Comment(models.Model):
