@@ -6,7 +6,8 @@
 <body>
 
 {% for video in all_video %}
-	<h1>{{ video.title }}</h1>
+	<a href='/hello/{{ video.slug }}/'>{{ video.title }}</a><br>
+
 	<iframe width="853" height="480" src={{ video.url }} ></iframe>
 	<h2>{{ video.description }}</h2>
 	<h3>{{ video.date }}</h3>

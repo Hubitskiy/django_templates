@@ -46,3 +46,35 @@ services:
     container_name: cel_redis
     volumes:
       - ./redis_data:/data
+
+  selenium-hub:
+    image: selenium/hub:3.141.59-yttrium
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:3.141.59-yttrium
+    container_name: chrome
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    links:
+      - "web:0.0.0.0"
+      
+  firefox:
+    image: selenium/node-firefox:3.141.59-yttrium
+    container_name: firefox
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+    links:
+      - "web:0.0.0.0"

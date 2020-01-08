@@ -25,4 +25,12 @@ def hello(request):
 		cache.set('all_video', all_video, timeout=DEFAULT_TIMEOUT)
 		response['all_video'] = all_video
 	return render(request, "index.html", response)
+
+
+def show_one(request, slug):
+	response = {}
+	logging.warning(slug)
+	one_video = MyVideo.objects.get(slug=slug)
+	response['all_video'] = [one_video.to_json()]
+	return render(request, "index.html", response)
 # Create your views here.

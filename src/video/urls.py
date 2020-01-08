@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import re_path
 from . import views
 
 urlpatterns = [
-	path('hello/', views.hello)
+	re_path('^hello/$', views.hello),
+	re_path('^hello/(?P<slug>[-\w]+)/$', views.show_one),
 ]
