@@ -435,3 +435,463 @@ Not Found: /favicon.ico
 Not Found: /static/admin/css/base.css
 Not Found: /static/admin/css/responsive.css
 Not Found: /static/admin/css/dashboard.css
+Not Found: /rtfghf/
+Not Found: /rtfghf/
+Not Found: /rtfghf/
+Not Found: /rtfghf/
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /favicon.ico
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 399, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 185, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 180, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 382, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 409, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/forms.py", line 196, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/backends.py", line 20, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 402, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 256, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+Not Found: /rtfghf/
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /favicon.ico
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 399, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 185, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 180, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 382, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 409, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/forms.py", line 196, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/backends.py", line 20, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 402, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 256, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+Not Found: /rtfghf/
+Not Found: /static/admin/css/base.css
+Not Found: /static/admin/css/login.css
+Not Found: /static/admin/css/responsive.css
+Not Found: /favicon.ico
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/admin/sites.py", line 399, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 142, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/utils/decorators.py", line 45, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/views.py", line 61, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 185, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 180, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 382, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/dist-packages/django/forms/forms.py", line 409, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/forms.py", line 196, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/backends.py", line 20, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/dist-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 402, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 256, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 1242, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/query.py", line 55, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/models/sql/compiler.py", line 1100, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/dist-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/dist-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "auth_user" does not exist
+LINE 1: ...user"."is_active", "auth_user"."date_joined" FROM "auth_user...
+                                                             ^
+
+Not Found: /
+"GET / HTTP/1.1" 404 2258
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2309
+Internal Server Error: /hello/green/
+Traceback (most recent call last):
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django\docker\python2.0\src\video\views.py", line 33, in show_one
+    one_video = MyVideo.objects.get(slug=slug)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\query.py", line 408, in get
+    self.model._meta.object_name
+video.models.MyVideo.DoesNotExist: MyVideo matching query does not exist.
+"GET /hello/green/ HTTP/1.1" 500 75579
+Internal Server Error: /hello/add_comment_blyt/oxxxymiron-gorod-pod-podoshvoj-2015/
+Traceback (most recent call last):
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\django\docker\python2.0\src\video\views.py", line 44, in add_comment
+    user=request.user)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\query.py", line 420, in create
+    obj = self.model(**kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\base.py", line 483, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\db\models\fields\related_descriptors.py", line 211, in __set__
+    self.field.remote_field.model._meta.object_name,
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x00000260470F7B38>>": "Comment.user" must be a "User" instance.
+"GET /hello/add_comment_blyt/oxxxymiron-gorod-pod-podoshvoj-2015/?text=hello+drug+blyt HTTP/1.1" 500 87940
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\django\docker\python2.0\src\video\views.py", line 27, in hello
+    return render(request, "index.html", response)
+NameError: name 'response' is not defined
+"GET /hello/ HTTP/1.1" 500 100224
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\django\docker\python2.0\src\video\views.py", line 29, in hello
+    return render(request, "all_video.html", response)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 311, in do_include
+    (bits[0], option))
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: 'form'.
+"GET /hello/ HTTP/1.1" 500 198269
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "D:\django\docker\python2.0\src\video\views.py", line 29, in hello
+    return render(request, "all_video.html", response)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\backends\django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Student\Anaconda3\lib\site-packages\django\template\loader_tags.py", line 311, in do_include
+    (bits[0], option))
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: "'form'".
+"GET /hello/ HTTP/1.1" 500 198439

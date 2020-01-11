@@ -119,9 +119,9 @@ class VideoTestSeleniumGlobal(TestCase):
     def setUp(self):
         super().setUp()
         self.selenium = webdriver.Remote(
-            command_executor = "http://172.18.0.5:4444/wd/hub",
+            command_executor = "http://172.18.0.2:4444/wd/hub",
             desired_capabilities = {"browserName":'chrome'})
-        self.live_server_url = "http://185.227.99.68/admin/login/"
+        self.live_server_url = "web://web:8000/admin/login/"
 
     def tearDown(self):
         super().tearDown()

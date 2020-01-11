@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block title %}svisni v huy{% endblock %}
+{% block video %}
+<div class="container">
+{% for video in all_video %}
+	<div class="card" style="background-color: black">
+		<div class="card-header">
+			<a href='/hello/{{ video.slug }}/'>{{ video.title }}</a>
+		</div>
+		<div class="card-body">
+			<iframe width="853" height="480" src={{ video.url }} ></iframe>
+		</div>
+		<div class="card-footer">
+			<button data-toggle="collapse" data-target="#video{{ video.id }}">Collapsible</button>
+			<div id="video{{ video.id }}" class="collapse">
+				{{ video.description }}
+			</div>
+		</div>
+	</div>
+
+	<h3>{{ video.date }}</h3>
+	<h4>LIKES:{{ video.likes }}</h4><hr>
+	<h6>{{ video.long_post }}</h6>
+
+	{% if video.likes == 0 %}
+		<h1>likes is 0</h1>
+	{% else %}
+		<h1>likes isn't 0</h1>
+	{% endif %}
+
+	{{ video.likes|add:1 }}
+
+	{% for comment in video.comment %}
+		<h3>{{ comment.text }}</h3>
+		<h4>{{ comment.date }}</h4>
+		<h4>{{ comment.likes }}</h4>
+		<h5>{{ comment.user }}</h5>
+	{% endfor %}
+	{{ form }}
+
+	<form action="/hello/add_comment_blyt/{{ video.slug }}">
+		<div class="form-group">
+  			<label for="comment">Comment:</label>
+  			<textarea class="form-control" rows="5" name="text"></textarea>
+		</div>
+		<input type="submit" value="Fuck off">
+	</form>
+
+{% endfor %}
+</div>
+{% if flag %}
+{% include "insert.html" with title_pager="idi v huy" %}
+{% else %}
+{% include "insert.html" with title_pager=form %}
+{% endif %}
+{% endblock %}

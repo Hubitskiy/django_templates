@@ -35,7 +35,8 @@ class MyVideo(models.Model):
                 "url":self.url,
                 "date":self.date,
                 "comment":self.comment,
-                "long_post":self.long_post}
+                "long_post":self.long_post,
+                "id":self.id}
 
 
 class Comment(models.Model):
