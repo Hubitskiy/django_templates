@@ -896,3 +896,246 @@ Traceback (most recent call last):
 django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: "'form'".
 "GET /hello/ HTTP/1.1" 500 198439
 Not Found: /
+Not Found: /
+"GET / HTTP/1.1" 404 2471
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2522
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/timwer/PycharmProjects/python2.0/src/video/views.py", line 30, in hello
+    return render(request, "all_video.html", response)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/defaulttags.py", line 952, in do_if
+    nodelist = parser.parse(('elif', 'else', 'endif'))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 52: 'endblock', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+"GET /hello/ HTTP/1.1" 500 221517
+Not Found: /favicon.ico
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/timwer/PycharmProjects/python2.0/src/video/views.py", line 30, in hello
+    return render(request, "all_video.html", response)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 62, in render
+    result = block.nodelist.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/defaulttags.py", line 209, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 904, in render_annotated
+    return self.render(context)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/urls/base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/urls/resolvers.py", line 668, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add_comment' with keyword arguments '{'slug': 'oxxxymiron-gorod-pod-podoshvoj-2015'}' not found. 1 pattern(s) tried: ['hello/add_comment_blyt/<str:slug>/$']
+"GET /hello/ HTTP/1.1" 500 245867
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Internal Server Error: /form_comment/oxxxymiron-gorod-pod-podoshvoj-2015/
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/timwer/PycharmProjects/python2.0/src/video/views.py", line 63, in form_comment
+    if form.save(user_id=request.user_id, video_id=MyVideo.objects.get(slug=slug).id):
+AttributeError: 'WSGIRequest' object has no attribute 'user_id'
+"POST /form_comment/oxxxymiron-gorod-pod-podoshvoj-2015/ HTTP/1.1" 500 75535
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /
+"GET / HTTP/1.1" 404 2892
+Internal Server Error: /hello/
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 470, in parse
+    compile_func = self.tags[command]
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/timwer/PycharmProjects/python2.0/src/video/views.py", line 30, in hello
+    return render(request, "all_video.html", response)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/shortcuts.py", line 36, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loaders/base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 266, in do_extends
+    nodelist = parser.parse()
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/loader_tags.py", line 209, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/defaulttags.py", line 811, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 472, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/timwer/PythonProjects/venv/DJANGO/lib/python3.7/site-packages/django/template/base.py", line 528, in invalid_block_tag
+    get_text_list(["'%s'" % p for p in parse_until], 'or'),
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 65: 'endblock', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+"GET /hello/ HTTP/1.1" 500 230644
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /
+"GET / HTTP/1.1" 404 2892
+Not Found: /
+"GET / HTTP/1.1" 404 2892

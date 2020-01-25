@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-{% block title %}svisni v huy{% endblock %}
+{% block title %}title{% endblock %}
 {% block video %}
 <div class="container">
 {% for video in all_video %}
@@ -36,21 +36,35 @@
 		<h4>{{ comment.likes }}</h4>
 		<h5>{{ comment.user }}</h5>
 	{% endfor %}
-	{{ form }}
 
-	<form action="/hello/add_comment_blyt/{{ video.slug }}">
-		<div class="form-group">
-  			<label for="comment">Comment:</label>
-  			<textarea class="form-control" rows="5" name="text"></textarea>
-		</div>
-		<input type="submit" value="Fuck off">
+<!--	<form action="{% url 'add_comment' slug=video.slug %}" method="post">-->
+<!--		{% csrf_token %}-->
+<!--		<div class="form-group">-->
+<!--  			<label for="comment">Comment:</label>-->
+<!--  			<textarea class="form-control" rows="5" name="text"></textarea>-->
+<!--		</div>-->
+<!--		<input type="submit" value="Fuck off">-->
+<!--	</form>-->
+
+	<form action="{% url 'form_comment' slug=video.slug %}" method="post">
+		{% csrf_token %}
+		{{ form.text.label }}
+		{{ form.text }}
+		<button type="submit">Done</button>
 	</form>
-
 {% endfor %}
 </div>
-{% if flag %}
-{% include "insert.html" with title_pager="idi v huy" %}
-{% else %}
-{% include "insert.html" with title_pager=form %}
-{% endif %}
+<form action="{% url 'form_video_creater' %}" method="post">
+		{% csrf_token %}
+		{% for video in form_video_creater %}
+			{{ video.label }}
+			{{ video }}
+		{% endfor %}
+		<button type="submit">Done</button>
+	</form>
+
+<form>
+	{{ NeEbstisVideo }}
+	<button type="submit">Done</button>
+</form>
 {% endblock %}

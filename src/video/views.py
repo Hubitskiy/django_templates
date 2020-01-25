@@ -5,7 +5,7 @@ import logging
 from rest_framework.decorators import api_view
 from django.core.cache import cache
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
-from video.forms import CommentForm
+from video.forms import CommentForm, VideoForm, NeEbstisVideo
 
 
 def hello1(request):
@@ -26,7 +26,8 @@ def hello(request):
 	#cache.set('all_video', all_video, timeout=DEFAULT_TIMEOUT)
 	response['all_video'] = all_video
 	response['form'] = CommentForm()
-	response['flag'] = False
+	response['form_video_creater'] = VideoForm()
+	response['NeEbstisVideo'] = NeEbstisVideo()
 	return render(request, "all_video.html", response)
 
 
@@ -39,11 +40,37 @@ def show_one(request, slug):
 
 
 def add_comment(request, slug):
-	text = request.GET['text']
+	text = request.POST['text']
 	video = MyVideo.objects.get(slug=slug)
 	comment = Comment.objects.create(
 		text=text,
 		video=video,
 		user=request.user)
 	return redirect('hello_url')
+
+# def form_comment(request, slug):
+# 	form = CommentForm(request.POST)
+# 	if  form.is_valid():
+# 		text = form.cleaned_data['text']
+# 		vidosik = MyVideo.objects.get(slug=slug)
+# 		user = request.user
+# 		Comment.objects.create(
+# 			text=text,
+# 			video=vidosik,
+# 			user=user)
+# 	return redirect('hello_url')
+
+def form_comment(request, slug):
+	form = CommentForm(request.POST)
+	video_id = MyVideo.objects.get(slug=slug).id
+	if form.save(user_id=request.user.id, video_id=video_id):
+		return redirect('hello_url')
+	return HttpResponse('Error')
 # Create your views here.
+
+
+def form_video_creater(request,):
+	video_form = VideoForm(request.POST)
+	if video_form.save():
+		return redirect('hello_url')
+	return HttpResponse('Error')
